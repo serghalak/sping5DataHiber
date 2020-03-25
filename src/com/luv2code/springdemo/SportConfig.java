@@ -5,12 +5,19 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan("com.luv2code.springdemo")
+//@ComponentScan("com.luv2code.springdemo")
 public class SportConfig {
 	
 	@Bean
 	public Coach coach() {
-		return new TennisCoach();
+		return new SwimCoach(fortuneService());
 	}
+	
+	@Bean
+	public FortuneService fortuneService() {
+		return new SadFortuneService();
+	}
+	
+	
 
 }
