@@ -14,13 +14,16 @@ public class RandomFortuneService implements FortuneService {
 			"The journey is the reward"
 	};
 	
+	private Random myRandom=new Random();
+	
 	@Override
 	public String getFortune() {
 		// TODO Auto-generated method stub
 		
-		Random random = new Random();
-		int randomInt=random.nextInt(data.length);
+		//Random random = new Random();
+		int randomInt=myRandom.nextInt(data.length);
 		return data[randomInt];
 	}
-
+	
+	
 }
