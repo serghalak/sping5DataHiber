@@ -1,9 +1,14 @@
 package com.luv2code.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 
 public class SwimCoach implements Coach {
 	
+	@Value("${foo.email}")
+	private String email;
+	@Value("${foo.team}")
+	private String team;
 	
 	private FortuneService fortuneService;
 	
@@ -26,4 +31,14 @@ public class SwimCoach implements Coach {
 		return fortuneService.getFortune();
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public String getTeam() {
+		return team;
+	}
+
+	
+	
 }
